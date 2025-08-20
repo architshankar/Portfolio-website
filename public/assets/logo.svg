@@ -1,0 +1,70 @@
+<svg width="800" height="600" viewBox="0 150 800 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .drawing-path {
+        fill: none;
+        stroke: white;
+        stroke-width: 20;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+      }
+
+      .stroke-1 {
+        animation: draw 8s ease-in-out 0s infinite;
+      }
+      .stroke-2 {
+        animation: draw 8s ease-in-out 1s infinite;
+      }
+      .stroke-3 {
+        animation: draw 8s ease-in-out 2s infinite;
+      }
+      .stroke-4 {
+        animation: draw 8s ease-in-out 3s infinite;
+      }
+      .stroke-5 {
+        animation: draw 8s ease-in-out 4s infinite;
+      }
+
+      @keyframes draw {
+        0% {
+          stroke-dashoffset: 1000;
+          opacity: 1;
+        }
+        12.5% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        87.5% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        100% {
+          stroke-dashoffset: -1000;
+          opacity: 0;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- Letter A - Left stroke -->
+  <path class="drawing-path stroke-1" 
+        d="M 280 450 Q 320 280 360 150 Q 380 120 400 150"/>
+
+  <!-- Letter A - Right stroke -->  
+  <path class="drawing-path stroke-2" 
+        d="M 400 150 Q 420 180 440 250 Q 460 350 480 450"/>
+
+  <!-- Letter A - Cross bar -->
+  <path class="drawing-path stroke-3" 
+        d="M 330 320 Q 380 310 430 320"/>
+
+  <!-- Connecting swoosh under A -->
+  <path class="drawing-path stroke-4" 
+        d="M 320 480 Q 350 520 450 500 Q 550 480 600 520"/>
+
+  <!-- Letter S -->
+  <path class="drawing-path stroke-5" 
+        d="M 580 280 Q 540 250 500 280 Q 460 310 500 340 Q 540 370 580 400 Q 620 430 580 460 Q 540 490 500 460"/>
+</svg>
