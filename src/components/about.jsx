@@ -43,7 +43,7 @@ export default function About() {
                     className="text-4xl md:text-5xl lg:text-7xl font-extrabold uppercase tracking-[.01em] scale-x-[1.1] drop-shadow-[2px_2px_4px_rgba(0,0,0,0.6)]"
                     itemColor="#e0f11f"
                 /> */}
-                
+
 
                 <ScrollVelocity
                     texts={['Fullstack Developer   ◆', 'Data Analyist   ◆',]}
@@ -73,7 +73,7 @@ export default function About() {
                     </ScrollReveal>
 
                     <div className="flex flex-col md:flex-row md:space-x-12">
-                        <ScrollReveal className="w-full md:w-1/2 mb-10 md:mb-0" delay={0.2}>
+                        {/* <ScrollReveal className="w-full md:w-1/2 mb-10 md:mb-0" delay={0.2}>
                             <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-6">
                                 With over 8 years of experience in digital design and development, I specialize in creating
                                 user-centered experiences that balance aesthetics with functionality.
@@ -83,6 +83,14 @@ export default function About() {
                                 digital solutions for brands and businesses across various industries.
                             </p>
 
+                        </ScrollReveal> */}
+                        <ScrollReveal className="w-full md:w-1/2 mb-10 md:mb-0" delay={0.2}>
+                            <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-6">
+                                I'm a final year BTech student majoring in Information Technology from Kalinga Institute of Industrial Technology (KIIT), passionate about creating innovative digital solutions and exploring cutting-edge technologies.
+                            </p>
+                            <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-6">
+                                My journey in tech has been driven by curiosity and a desire to solve real-world problems through code, combining academic knowledge with hands-on project experience to build meaningful applications.
+                            </p>
                         </ScrollReveal>
 
                         <ScrollReveal className="w-full md:w-1/2" delay={0.4}>
@@ -103,10 +111,10 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            
+
             {/* Bottom Tools Marquee - opposite direction */}
             <div className="relative overflow-hidden bg-background py-12 mt-32">
-                
+
                 <div className="pointer-events-none absolute inset-y-0 left-0 w-32 z-10 bg-gradient-to-r from-background to-transparent" />
                 <div className="pointer-events-none absolute inset-y-0 right-0 w-32 z-10 bg-gradient-to-l from-background to-transparent" />
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-24 z-10 bg-gradient-to-b from-background to-transparent" />
@@ -127,8 +135,8 @@ export default function About() {
                     className="custom-scroll-text"
                 />
             </div>
-            
-            
+
+
         </section>
     );
 }
