@@ -6,10 +6,15 @@ import Projects from "../components/Projects";
 import Education from "../components/Education";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import Extracurricular from "@/components/Extracurricular";
-import ScrollReveal from "@/components/ui/scroll-reveal";
-import About from "@/components/about";
+// import Extracurricular from "@/components/Extracurricular";
+// import ScrollReveal from "@/components/ui/scroll-reveal";
+// import About from "@/components/about";
 import ClickSpark from '../blocks/Animations/ClickSpark/ClickSpark';
+
+
+import Extracurricular from "../components/extracurricular";
+import ScrollReveal from "../components/ui/scroll-reveal";
+import About from "../components/about";
 
 
 const Index = () => {
