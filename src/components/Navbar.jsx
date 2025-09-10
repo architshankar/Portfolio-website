@@ -17,6 +17,7 @@ export default function Navbar() {
     { href: "#projects", label: "Projects" },
     { href: "#extracurricular", label: "Beyond Work" },
     { href: "#contact", label: "Contact" },
+    { href: "https://drive.google.com/file/d/1_hqhs8sMTcm6AUeaDRYvJjkOpXKuX0DH/view", label: "Resume" },
   ];
 
   return (
@@ -28,7 +29,7 @@ export default function Navbar() {
             <img
               src="/assets/logo1.svg"
               alt="Logo"
-              className="h-16 w-auto" 
+              className="h-16 w-auto"
             />
           </a>
 
@@ -41,6 +42,10 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className="font-medium hover:text-[#e0f11f] transition-colors duration-300"
+
+                {...(link.label === "Resume"
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
               >
                 {link.label}
               </a>

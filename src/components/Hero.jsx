@@ -241,14 +241,17 @@ const Hero = () => {
 
         {/* CTA Button */}
         <motion.a
-          href="#contact"
+          href="https://drive.google.com/file/d/1_hqhs8sMTcm6AUeaDRYvJjkOpXKuX0DH/view?usp=sharing"
+          target="_blank"
+          rel="noreferrer"
           className={`relative z-20 inline-block ${isMobile ? 'px-6 py-3 text-sm' : 'px-8 py-4'
             } bg-neutral-200 dark:bg-neutral-700 text-black dark:text-white font-semibold rounded-full hover:bg-gray-300 dark:hover:bg-neutral-600 transition-all shadow-lg hover:shadow-accent/20`}
           whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
           whileTap={{ scale: 0.97 }}
         >
-          Get in touch
+          Resume
         </motion.a>
+
       </section>
     </div>
   );

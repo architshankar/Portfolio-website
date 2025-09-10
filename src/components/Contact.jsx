@@ -63,7 +63,7 @@ const Contact = () => {
                   asChild
                 >
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/archit-shankar-815756262/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
@@ -78,7 +78,7 @@ const Contact = () => {
                   asChild
                 >
                   <a
-                    href="https://twitter.com"
+                    href="https://x.com/archit__shankar?t=pBR8mQiksXo75dJAsSsaIQ&s=09"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Twitter"
@@ -93,7 +93,7 @@ const Contact = () => {
                   asChild
                 >
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/archit.shankar?igsh=NnR4M3U1eDdqcXdw"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"

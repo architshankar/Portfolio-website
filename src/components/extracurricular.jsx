@@ -796,22 +796,22 @@ export default function Extracurricular() {
       icon: <BookOpen className="w-10 h-10" style={{ color: "rgb(224, 241, 31)" }} />,
       title: "Graphic Designer",
       description:
-        "Contributing to industry publications with articles on modern web development techniques and design systems.",
+        "Graphic design lead in our college's offical dance society .",
       details: {
-        role: "Contributing author to leading web development blogs and publications.",
-        duration: "2017 - Present",
+        role: "Graphic design and content lead",
+        duration: "2024 - 2025",
         impact:
-          "Created educational content that has helped thousands of developers improve their skills and stay current with evolving web technologies.",
+          "Created a legacy of quality content design teaching juniors the importance of quality content design and its impact on audience engagement.",
         achievements: [
-          "Published 25+ technical articles across major platforms",
-          "Featured writer on CSS-Tricks and Smashing Magazine",
-          "Created comprehensive guide to animation performance",
-          "Technical reviewer for two published web development books",
+          "Got promoted by the society's administration for the role",
+          "Featured in college's instagram handle",
+          "Created comprehensive guide for coming juniors",
+          
         ],
         images: [
-          "/assets/fest1.jpg",
-          "/assets/fest2.jpg",
-          "/assets/fest3.jpg",
+          "/assets/yoyoer.jpg",
+          "/assets/dg1.jpg",
+          "/assets/dg2.jpg",
         ],
       },
     },
