@@ -78,11 +78,31 @@ export default function Navbar() {
                     <a
                       key={link.href}
                       href={link.href}
-                      onClick={closeMenu}
+                      onClick={(e) => {
+                        if (link.href.startsWith("#")) {
+                          e.preventDefault();
+                          closeMenu(); // close immediately
+
+                          setTimeout(() => {
+                            const target = document.querySelector(link.href);
+                            if (target) {
+                              const yOffset = -80; // adjust for navbar height
+                              const targetY =
+                                target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                              window.scrollTo({ top: targetY, behavior: "smooth" });
+                            }
+                          }, 100); // delay slightly so menu can close
+                        } else {
+                          // external link like Resume
+                          closeMenu();
+                        }
+                      }}
                       className="py-2 font-medium hover:text-[#e0f11f] transition-colors duration-300"
                     >
                       {link.label}
                     </a>
+
                   ))}
                 </div>
               </div>
@@ -95,3 +115,23 @@ export default function Navbar() {
     </nav>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
