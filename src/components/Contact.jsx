@@ -1,25 +1,63 @@
-import React from "react";
+
+
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Linkedin, Twitter, Instagram, Mail, Phone } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
+
 
 const Contact = () => {
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // "success" | "error" | null
+
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted");
-  };
+  e.preventDefault();
+  setLoading(true);
+
+  emailjs
+    .sendForm(
+      "service_cbox84o",   // replace with your EmailJS service ID
+      "template_k2gjfo2",  // replace with your template ID
+      formRef.current,
+      "UG8AZVK0kXxUC4F1T"  // replace with your EmailJS public key
+    )
+    .then(
+      () => {
+        setLoading(false);
+        formRef.current.reset();
+        toast.success("✅ Message sent successfully!", {
+          duration: 4000,
+          position: "bottom-left",
+        });
+      },
+      (error) => {
+        console.error("EmailJS error:", error);
+        setLoading(false);
+        toast.error("❌ Failed to send message. Please try again.", {
+          duration: 4000,
+          position: "bottom-left",
+        });
+      }
+    );
+};
+
 
   return (
     <section id="contact" className="section-padding bg-background">
+      <Toaster position="bottom-left" reverseOrder={false} />
       <div className="container mx-auto px-4">
         <h2 className="section-heading">
           Get In <span style={{ color: "#e0f11f" }}>Touch</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+
+          {/* LEFT SIDE - Contact Info */}
           <div>
             <h3 className="text-2xl font-bold mb-4 text-white">Contact Information</h3>
             <p className="text-gray-300 mb-6">
@@ -105,32 +143,56 @@ const Contact = () => {
             </div>
           </div>
 
-          <Card className="bg-white dark:bg-neutral-800">
+          {/* RIGHT SIDE - Contact Form */}
+          <Card className="bg-white dark:bg-neutral-800 relative">
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold mb-4 text-white">Send Me a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-300">
-                    Name
-                  </label>
-                  <Input id="name" placeholder="Your name" className="bg-white dark:bg-neutral-700 border-[#e0f11f] focus:border-[#e0f11f] focus:ring-[#e0f11f]" />
+                  <label htmlFor="name" className="block text-sm mb-1 text-gray-300">Name</label>
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                    className="bg-white dark:bg-neutral-700 border-[#e0f11f] focus:border-[#e0f11f]"
+                  />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-300">
-                    Email
-                  </label>
-                  <Input id="email" type="email" placeholder="Your email" className="bg-white dark:bg-neutral-700 border-[#e0f11f] focus:border-[#e0f11f] focus:ring-[#e0f11f]" />
+                  <label htmlFor="email" className="block text-sm mb-1 text-gray-300">Email</label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Your email"
+                    required
+                    className="bg-white dark:bg-neutral-700 border-[#e0f11f] focus:border-[#e0f11f]"
+                  />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1 text-gray-300">
-                    Message
-                  </label>
-                  <Textarea id="message" placeholder="Your message" rows={4} className="bg-white dark:bg-neutral-700 border-[#e0f11f] focus:border-[#e0f11f] focus:ring-[#e0f11f]" />
+                  <label htmlFor="message" className="block text-sm mb-1 text-gray-300">Message</label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Your message"
+                    rows={4}
+                    required
+                    className="bg-white dark:bg-neutral-700 border-[#e0f11f] focus:border-[#e0f11f]"
+                  />
                 </div>
-                <Button type="submit" className="w-full bg-[#e0f11f] text-black hover:bg-[#e0f11f]/90">
-                  Send Message
+
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-[#e0f11f] text-black hover:bg-[#e0f11f]/90 flex items-center justify-center"
+                >
+                  {loading && (
+                    <span className="loader border-2 border-t-transparent border-black rounded-full w-5 h-5 mr-2 animate-spin"></span>
+                  )}
+                  {loading ? "Sending..." : "Send Message"}
                 </Button>
               </form>
+
             </CardContent>
           </Card>
         </div>
