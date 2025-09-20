@@ -30,7 +30,7 @@ const Contact = () => {
       () => {
         setLoading(false);
         formRef.current.reset();
-        toast.success("✅ Message sent successfully!", {
+        toast.success("Message sent successfully!", {
           duration: 4000,
           position: "bottom-left",
         });
@@ -38,7 +38,7 @@ const Contact = () => {
       (error) => {
         console.error("EmailJS error:", error);
         setLoading(false);
-        toast.error("❌ Failed to send message. Please try again.", {
+        toast.error("Failed to send message. Please try again.", {
           duration: 4000,
           position: "bottom-left",
         });
