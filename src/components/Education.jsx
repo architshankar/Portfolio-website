@@ -9,7 +9,7 @@ const Education = () => {
       degree: "Bachelor of Technology (B.Tech)",
       field: "Information Technology",
       institution: "Kalinga Institute of Industrial Technology",
-      period: "2020 - 2024",
+      period: "2022 - 2026",
       description:
         "Focused on full-stack development, AI/ML, data structures, algorithms, and software engineering principles.",
       cgpa: "8.3/10",
